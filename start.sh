@@ -31,7 +31,7 @@ echo "#!/bin/sh
 
 unset SESSION_MANAGER
 unset DBUS_SESSION_BUS_ADDRESS
-exec $1" >$HOME/.vnc/xstartup
+exec $@" >$HOME/.vnc/xstartup
 chmod 755 $HOME/.vnc/xstartup
 
 # Run the vncserver
