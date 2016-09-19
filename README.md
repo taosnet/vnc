@@ -45,7 +45,7 @@ Where the directory **ssh** has at a minimum authorized_keys. This is because th
 
 You can then run it via:
 ```
-docker run --name xterm -p 5901:22 taosnet/xterm
+docker run --name xterm -p 5901:22 -t taosnet/xterm
 ```
 
 To connect to the container, setup a ssh tunnel and connect:
