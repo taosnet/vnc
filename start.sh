@@ -1,8 +1,21 @@
 #!/bin/sh
 
 if [ -z "$1" ]; then
-	echo Usage: $0 startup_program
+	echo Usage: $0 [-s] startup_program
 	exit 1
+fi
+
+if [ "$1" = "-s" ] && [ -z "$2" ]; then
+	echo Usage: $0 [-s] startup_program
+	exit 1
+fi
+
+if [ "$1" = "-s" ]; then
+	if ! [ -e "/etc/ssh/ssh_host_rsa_key" ]; then
+		ssh-keygen -A
+	fi
+	/usr/sbin/sshd -f /etc/ssh/sshd_config
+	shift 1
 fi
 
 if ! [ -d $HOME/.vnc ]; then
