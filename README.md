@@ -50,7 +50,7 @@ docker run --name xterm -p 5901:22 taosnet/xterm
 
 To connect to the container, setup a ssh tunnel and connect:
 ```
-ssh -L5901:127.0.0.1:5901 root@mycontainer
+ssh -L5901:127.0.0.1:5901 -p 5901 root@mycontainer
 vncviewer localhost:5901
 ```
 
